@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="soon.css">
+</head>
+<body>
+    <div class="coming-soon-container">
+        <!-- Logo Section -->
+        <div class="logo">
+
+            <!-- <img src="img/logo.png" alt="Logo" /> -->
+           
+        </div>
+
+        <h1>We're Almost There!</h1>
+        <p>Our new website is under construction. Subscribe for launch updates and choose your favorite theme!</p>
+
+        <div class="countdown">
+            <div class="countdown-item">
+                <span id="days"></span> Days
+            </div>
+            <div class="countdown-item">
+                <span id="hours"></span> Hours
+            </div>
+            <div class="countdown-item">
+                <span id="minutes"></span> Minutes
+            </div>
+            <div class="countdown-item">
+                <span id="seconds"></span> Seconds
+            </div>
+        </div>
+
+        <form id="email-form" class="email-signup">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Notify Me!</button>
+        </form>
+
+        <div class="theme-selector">
+            <label for="theme">Choose your favorite theme:</label>
+            <select id="theme">
+                <option value="#ffffff">Light</option>
+                <option value="#121212">Dark</option>
+                <option value="#ff595e">Modern</option>
+                <option value="#1982c4">Cool</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Designed by Fatna Benkeltoum</p>
+    </footer>
+
+    <script src="comingsoon.js"></script>
+    <script>
+        // Handle form submission and send data to the server
+        document.getElementById('email-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const theme = document.getElementById('theme').value;
+            
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, theme }),
+            });
+
+            if (response.ok) {
+                alert("You've been subscribed!");
+            } else {
+                alert("Something went wrong. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>

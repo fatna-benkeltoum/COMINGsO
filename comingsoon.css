@@ -1,0 +1,82 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ff595e, #1982c4);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.coming-soon-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.countdown-item {
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.email-signup {
+    margin-bottom: 30px;
+}
+
+.email-signup input {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.email-signup button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.theme-selector {
+    margin-top: 20px;
+}
+
+.theme-selector select {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+}
